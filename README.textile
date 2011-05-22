@@ -1,0 +1,11 @@
+h1. README
+
+p. This is a example for a Hibernate Many-to-Many relationship with a composed primary key. The code is mostly from <a href="http://boris.kirzner.info/blog/archives/2008/07/19/hibernate-annotations-the-many-to-many-association-with-composite-key/">an blog post by Boris Kirzner</a> but I added another foreign key to create a bigger composed key. I also added database creation and insert SQL code to the project which was not mentioned in the blog post.
+
+p. Hope this helps someone as it helped me.
+
+h2. How to run it
+
+# Create new MySQL database and run code in <code>database.sql</code>
+# Edit hibernate.cfg.xml with your MySQL connection information
+# Run main method in <code>Main.java</code>
