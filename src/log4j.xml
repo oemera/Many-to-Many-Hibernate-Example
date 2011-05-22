@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration>
+ 
+    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- 
+            <param name="ConversionPattern"
+                value="[%d{ISO8601}] %-5p [%c] %m %n" />
+            -->
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH\:MM\:ss}][%p][%t][%c{2}] %m%n" />
+        </layout>
+    </appender>
+     
+    <appender name="STDERR" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.err" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="[%d{yyyy-MM-dd HH\:MM\:ss}][%p][%t][%c{2}] %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="ERROR" />
+            <param name="LevelMax" value="FATAL" />
+        </filter>
+    </appender>
+ 
+    <logger name="com.dailyoemer.hibernatetest" additivity="false">
+        <level value="debug" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+    
+    <logger name="org.hibernate" additivity="false">
+        <level value="info" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+    
+    <root>
+        <level value="error" />
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="STDERR" />
+        <appender-ref ref="SW_ROLLING_FILE" />
+    </root>
+ 
+</log4j:configuration>
