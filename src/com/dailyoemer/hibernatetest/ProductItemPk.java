@@ -8,6 +8,8 @@ import javax.persistence.ManyToOne;
 @Embeddable
 public class ProductItemPk implements Serializable {
  
+    private static final long serialVersionUID = 1L;
+	
     private Item item;
     private Product product;
     private Language language;

@@ -2,10 +2,8 @@ package com.dailyoemer.hibernatetest;
 
 import javax.persistence.AssociationOverride;
 import javax.persistence.AssociationOverrides;
-import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.JoinColumn;
@@ -23,7 +21,8 @@ public class ProductItem {
     private ProductItemPk getPk() {
         return pk;
     }
- 
+    
+    @SuppressWarnings("unused")
     private void setPk(ProductItemPk pk) {
         this.pk = pk;
     }

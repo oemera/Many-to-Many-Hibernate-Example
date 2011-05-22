@@ -1,6 +1,5 @@
 package com.dailyoemer.hibernatetest;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 

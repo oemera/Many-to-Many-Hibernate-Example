@@ -6,12 +6,13 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 
 public class Main {
-
+	
 	public static void main(String[] args) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		
 		Criteria criteria = session.createCriteria(Product.class);
+		@SuppressWarnings("unchecked")
 		List<Product> products = criteria.list();
 		
 		for(Product p : products) {
